@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ResultView: View {
-    @ObservedObject var viewModel: UserViewModel
-    @Binding var showResult: Bool // Binding to control the presentation of ResultView
+    @EnvironmentObject var viewModel: MainViewModel
 
     var body: some View {
         VStack {
+            HStack {
+                backButton
+                Spacer()
+            }
+                .padding(.top, 8)
+                .padding(.leading, 8)
+
             Text("\(viewModel.sum)")
                 .padding()
                 .font(.largeTitle)
@@ -40,12 +46,11 @@ struct ResultView: View {
                 .listStyle(PlainListStyle())
         }
             .padding()
-            .navigationBarItems(leading: backButton)
     }
 
     private var backButton: some View {
         Button(action: {
-            showResult = false // Set the binding to false to dismiss ResultView
+            viewModel.state = .inputView // Set the state to inputView to go back to InputView
         }) {
             HStack {
                 Text("Закрыть")

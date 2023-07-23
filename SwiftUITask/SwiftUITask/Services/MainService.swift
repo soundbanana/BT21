@@ -1,27 +1,24 @@
 //
-//  UserViewModel.swift
+//  MainService.swift
 //  SwiftUITask
 //
 //  Created by Daniil Chemaev on 23.07.2023.
 //
 
-
 import SwiftUI
 
-class UserViewModel: ObservableObject {
+class MainService {
     @Published var sum: Int = 0
     @Published var users: [User] = []
 
-    func fetchData(numbers: [String], completion: @escaping () -> Void) {
+    func fetchData(completion: @escaping ([User]) -> Void) {
         // Simulate a 2-second delay to fetch data
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let number1 = Int(numbers[0]) ?? 0
-            let number2 = Int(numbers[1]) ?? 0
-            self.sum = number1 + number2
-            self.users = self.parseJSON()
-            completion()
+            let users = self.parseJSON()
+            completion(users)
         }
     }
+
 
     private func parseJSON() -> [User] {
         let jsonString = """

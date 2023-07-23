@@ -10,9 +10,8 @@ import SwiftUI
 struct InputView: View {
     @State private var number1 = ""
     @State private var number2 = ""
-    @Binding var isLoading: Bool
-    @Binding var showResult: Bool
-    @ObservedObject var viewModel: UserViewModel
+    @State var isLoading: Bool = false
+    @EnvironmentObject var viewModel: MainViewModel
 
     var body: some View {
         VStack {
@@ -21,7 +20,7 @@ struct InputView: View {
                 .padding()
                 .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(.gray, lineWidth: 1) // Add border to the TextField
+                    .stroke(.gray, lineWidth: 1)
             )
 
             TextField("", text: $number2)
@@ -29,18 +28,18 @@ struct InputView: View {
                 .padding()
                 .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(.gray, lineWidth: 1) // Add border to the TextField
+                    .stroke(.gray, lineWidth: 1)
             )
 
             Button(action: {
                 fetchData()
             }, label: {
                     Text("Вторая View")
-                        .foregroundColor(.white) // Set the text color to white
+                        .foregroundColor(.white)
                     .padding()
                         .frame(maxWidth: .infinity)
-                        .background(.blue) // Set the background color to blue
-                    .cornerRadius(8) // Add a corner radius for a rounded button appearance
+                        .background(.blue)
+                    .cornerRadius(8)
                 })
                 .disabled(isLoading)
 
@@ -55,7 +54,6 @@ struct InputView: View {
         isLoading = true
         viewModel.fetchData(numbers: [number1, number2]) {
             isLoading = false
-            showResult = true
         }
     }
 }

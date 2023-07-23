@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var viewModel = UserViewModel()
-    @State private var isLoading = false
+    @StateObject private var viewModel = MainViewModel(mainService: MainService())
     @State private var showResultView = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                if !showResultView {
-                    InputView(isLoading: $isLoading, showResult: $showResultView, viewModel: viewModel)
-                } else {
-                    ResultView(viewModel: viewModel, showResult: $showResultView)
-                }
+        VStack {
+            if case .inputView = viewModel.state {
+                InputView()
+                    .environmentObject(viewModel)
+            } else if case .resultView = viewModel.state {
+                ResultView()
+                    .environmentObject(viewModel)
             }
         }
     }

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF6978FA2A6D871600FDBEDE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6978F92A6D871600FDBEDE /* MainViewModel.swift */; };
+		FF6978FC2A6D8A8D00FDBEDE /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6978FB2A6D8A8D00FDBEDE /* MainService.swift */; };
 		FFB315542A6D42DF00D729E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB315532A6D42DF00D729E0 /* Assets.xcassets */; };
 		FFB315572A6D42DF00D729E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB315562A6D42DF00D729E0 /* Preview Assets.xcassets */; };
 		FFB3155E2A6D432500D729E0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3155D2A6D432500D729E0 /* User.swift */; };
-		FFB315602A6D434300D729E0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3155F2A6D434300D729E0 /* UserViewModel.swift */; };
 		FFB315622A6D457500D729E0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB315612A6D457500D729E0 /* InputView.swift */; };
 		FFB315642A6D45F100D729E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB315632A6D45F100D729E0 /* MainView.swift */; };
 		FFB315662A6D467400D729E0 /* SwiftUITaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB315652A6D467400D729E0 /* SwiftUITaskApp.swift */; };
@@ -18,11 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF6978F92A6D871600FDBEDE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FF6978FB2A6D8A8D00FDBEDE /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		FFB3154C2A6D42DE00D729E0 /* SwiftUITask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB315532A6D42DF00D729E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB315562A6D42DF00D729E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFB3155D2A6D432500D729E0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FFB3155F2A6D434300D729E0 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FFB315612A6D457500D729E0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		FFB315632A6D45F100D729E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FFB315652A6D467400D729E0 /* SwiftUITaskApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUITaskApp.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF6978FD2A6D8A9300FDBEDE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FF6978FB2A6D8A8D00FDBEDE /* MainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FFB315432A6D42DE00D729E0 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 		FFB3154E2A6D42DE00D729E0 /* SwiftUITask */ = {
 			isa = PBXGroup;
 			children = (
+				FF6978FD2A6D8A9300FDBEDE /* Services */,
 				FFB315652A6D467400D729E0 /* SwiftUITaskApp.swift */,
 				FFB315692A6D5E1600D729E0 /* Models */,
 				FFB3156B2A6D5E3000D729E0 /* Views */,
@@ -88,7 +99,7 @@
 		FFB3156A2A6D5E1D00D729E0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				FFB3155F2A6D434300D729E0 /* UserViewModel.swift */,
+				FF6978F92A6D871600FDBEDE /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -173,9 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6978FA2A6D871600FDBEDE /* MainViewModel.swift in Sources */,
 				FFB315622A6D457500D729E0 /* InputView.swift in Sources */,
+				FF6978FC2A6D8A8D00FDBEDE /* MainService.swift in Sources */,
 				FFB315642A6D45F100D729E0 /* MainView.swift in Sources */,
-				FFB315602A6D434300D729E0 /* UserViewModel.swift in Sources */,
 				FFB315662A6D467400D729E0 /* SwiftUITaskApp.swift in Sources */,
 				FFB3155E2A6D432500D729E0 /* User.swift in Sources */,
 				FFB315682A6D5DE700D729E0 /* ResultView.swift in Sources */,
